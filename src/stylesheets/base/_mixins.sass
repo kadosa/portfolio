@@ -1,0 +1,36 @@
+// Based on http://codepen.io/javasteve99/pen/hDxpn
+=font-face($font-family, $file-path, $font-weight: normal, $font-style: normal)
+  @font-face
+    font-family: $font-family
+    src: url('#{$file-path}.eot')
+    src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'), url('#{$file-path}.woff2') format('woff2'), url('#{$file-path}.woff') format('woff'), url('#{$file-path}.ttf') format('truetype'), url('#{$file-path}.svg##{$font-family}') format('svg')
+    font-weight: $font-weight
+    font-style: $font-style
+
+  // Chrome for Windows rendering fix: http://www.adtrak.co.uk/blog/font-face-chrome-rendering/
+  @media screen and (-webkit-min-device-pixel-ratio: 0)
+    @font-face
+      font-family: $font-family
+      src: url('#{$file-path}.svg##{$font-family}') format('svg')
+
+
+@mixin mq-desktop
+    @media (min-width: $screen-lg-min)
+      @content
+
+
+@mixin mq-laptop
+  @media (min-width: $screen-md-min)
+    @content
+
+@mixin mq-tablet
+  @media (min-width: $screen-sm-min)
+    @content
+
+@mixin mq-phablet
+  @media (min-width: $screen-phablet-min)
+    @content
+
+@mixin mq-mobile
+  @media (max-width: $screen-xs-min)
+    @content
