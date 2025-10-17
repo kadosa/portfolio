@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>IFrame test</title>
+</head>
+
+<body>
+<p>Content of the document.ss.888....</p>
+<a href="http://kadosa.org/assets/Kadosa_Orosz_CV_2016.pdf">Link</a>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function(event) {
+    		var div2 = document.createElement('div');
+			div2.innerHTML = 'TEST';
+			document.body.appendChild(div2);
+  });
+
+		document.addEventListener('message', function(message) {
+			window.postMessage(message.data);
+		}, false);	
+
+	setTimeout(() => {
+		window.postMessage('With timeout');
+	}, 0);
+</script>
+</body>
+
+</html>
