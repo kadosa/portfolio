@@ -1,0 +1,19 @@
+{
+  "name": "kadosa-org",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Modernized static site for Kadosa Orosz built with Eleventy and esbuild.",
+  "scripts": {
+    "clean": "bun scripts/clean.js",
+    "build": "bun scripts/clean.js && bun scripts/build-assets.js && bunx eleventy",
+    "build:assets": "bun scripts/build-assets.js",
+    "build:site": "bunx eleventy",
+    "dev": "bun scripts/dev.js",
+    "dev:assets": "bun scripts/build-assets.js --watch",
+    "dev:site": "bunx eleventy --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "esbuild": "^0.21.4"
+  }
+}

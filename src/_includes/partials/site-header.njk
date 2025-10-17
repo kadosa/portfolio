@@ -1,0 +1,38 @@
+<header class="hero">
+  <div class="hero__identity">
+    <h1 class="hero__name">{{ site.title }}</h1>
+    <p class="hero__role">Creative Developer</p>
+  </div>
+  <nav class="hero__nav">
+    <ul class="nav">
+      {% for item in navigation %}
+      <li class="nav__item">
+        <a
+          href="{{ item.url }}"
+          class="nav__link{% if page.url == item.url %} nav__link--active{% endif %}"
+        >
+          {{ item.label }}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </nav>
+  <div class="hero__badge">
+    <img
+      src="/images/logo_geometry-a37cca176c.svg"
+      alt="Geometric logo"
+      class="hero__logo-image"
+      width="100"
+      height="100"
+      loading="lazy"
+    >
+    <img
+      src="/images/logo_lines-f70e473fbd.svg"
+      alt=""
+      class="hero__logo-lines"
+      width="100"
+      height="105"
+      loading="lazy"
+    >
+  </div>
+</header>
